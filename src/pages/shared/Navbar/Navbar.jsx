@@ -1,22 +1,14 @@
 import { Link } from "react-router-dom";
+import logo from "../../../assets/wolves-logo.png";
 
 
 const Navbar = () => {
     const navItems = <>
             <li><Link>Home</Link></li>
-      <li tabIndex={0}>
-        <details>
-          <summary>About</summary>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Blog</a></li>
+            <li><a>Blog</a></li>
     </>
     return (
-        <div className="navbar bg-black text-white">
+        <div style={{height: '100px'}} className="navbar bg-black text-white px-8">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -26,7 +18,7 @@ const Navbar = () => {
        {navItems}
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+    <img className="m-0 t-0" style={{width: '90px', height: '70px'}} src={logo} alt="" />
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
