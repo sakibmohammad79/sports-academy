@@ -1,14 +1,15 @@
 import { Link } from "react-router-dom";
-import logo from "../../../assets/wolves-logo.png";
+import logo from "../../../assets/logo4-800x307.png";
 
 
 const Navbar = () => {
     const navItems = <>
-            <li><Link>Home</Link></li>
-            <li><a>Blog</a></li>
+            <li><Link to='/' className="font-bold uppercase hover:text-red-600">Home</Link></li>
+            <li><Link to="/instructors" className="font-bold uppercase  hover:text-red-600">Instructors</Link></li>
+            <li><Link to="/class" className="font-bold uppercase  hover:text-red-600">Classes</Link></li>
     </>
     return (
-        <div style={{height: '100px'}} className="navbar bg-black text-white px-8">
+        <div style={{height: '100px'}} className="navbar fixed z-10 max-w-6xl bg-black text-white px-8">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -18,7 +19,7 @@ const Navbar = () => {
        {navItems}
       </ul>
     </div>
-    <img className="m-0 t-0" style={{width: '90px', height: '70px'}} src={logo} alt="" />
+    <img className="m-0 t-0" style={{width: '150px', height: '80px'}} src={logo} alt="" />
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
