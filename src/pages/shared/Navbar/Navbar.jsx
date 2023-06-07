@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../../../assets/logo4-800x307.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
-import { FaGolfBall, FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 
 
 const Navbar = () => {
@@ -28,7 +28,7 @@ const Navbar = () => {
       })
     }
     return (
-        <div style={{height: '100px'}} className="navbar fixed z-10 bg-black text-white px-12">
+        <div style={{height: '100px'}} className="navbar max-w-6xl fixed z-10 bg-black text-white px-12">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -38,7 +38,7 @@ const Navbar = () => {
        {navItems}
       </ul>
     </div>
-    <img className="m-0 t-0" style={{width: '180px', height: '90px'}} src={logo} alt="" />
+    <img className="m-0 t-0" style={{width: '180px', height: '80px'}} src={logo} alt="" />
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
