@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import {  useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import {  FaGoogle } from 'react-icons/fa';
 import { AuthContext } from "../../../providers/AuthProvider";
+import { Link, useNavigate } from "react-router-dom";
+import SocialLogin from "../../shared/SocialLogin/SocialLogin";
 
 
 const Signin = () => {
-    const {createUser} = useContext(AuthContext);
+  const navigate = useNavigate();
+    const {createUser, updateProfileUser} = useContext(AuthContext);
     const { register, formState: { errors }, handleSubmit, watch } = useForm();
     const password = React.useRef({});
     password.current = watch('password', '');
@@ -17,11 +18,16 @@ const Signin = () => {
     .then((result)=> {
         const user = result.user;
         console.log(user);
+        updateProfileUser(data.name, data.photoUrl)
+        .then(result => console.log(result))
+        navigate('/')
     })
     .catch((error) => {
         console.log(error.message);
     })
   };
+
+
   
 
     
@@ -101,8 +107,7 @@ const Signin = () => {
               <div className="form-control mt-6">
                 <input className="btn btn-primary" type="submit" value="Signup" />
               </div>
-              <div className="divider">OR</div>
-              <button className="btn btn-outline btn-primary"><FaGoogle/> SignUp By Google</button>
+              <SocialLogin></SocialLogin>
               <Link to='/login' className="text-center pt-2">Already Have An Account? Please<span className="font-bold text-primary"> Login</span></Link>
             </div>
             </form>
