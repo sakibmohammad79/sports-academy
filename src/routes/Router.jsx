@@ -5,9 +5,9 @@ import Login from "../pages/Home/Login/Login";
 import Signin from "../pages/Home/Signin/Signin";
 import Allinstructor from "../pages/Instructor/AllInstructor/Allinstructor";
 import InstructorClass from "../pages/Class/InstructorClass/InstructorClass";
-import MyClass from "../pages/Dashboard/MyClass/MyClass";
 import Dashboard from "../layout/Dashboard";
-
+import MySelectedClass from "../pages/Dashboard/MySelectedClass/MySelectedClass";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -44,8 +44,8 @@ const router = createBrowserRouter([
       element: <Dashboard></Dashboard>,
       children: [
         {
-          path: 'myclass',
-          element: <MyClass></MyClass>
+          path: 'selectedclass',
+          element: <MySelectedClass></MySelectedClass>
         }
       ]
     }

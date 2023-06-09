@@ -3,20 +3,21 @@ import logo from "../../../assets/logo4-800x307.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { FaShoppingCart } from "react-icons/fa";
+import useClass from "../../../hook/useClass";
 
 
 const Navbar = () => {
   const {user, logOutUser} = useContext(AuthContext);
-
+  const [classes] = useClass();
     const navItems = <>
             <li><Link to='/' className="font-bold uppercase hover:text-lime-500">Home</Link></li>
             <li><Link to='/instructor' className="font-bold uppercase  hover:text-lime-500">Instructors</Link></li>
             <li><Link to='/class'  className="font-bold uppercase  hover:text-lime-500">Classes</Link></li>
             {
               user && 
-              <Link to='dashboard/myclass'>
+              <Link to='/dashboard/selectedclass'>
                 <div className="indicator">
-              {/* <span className="indicator-item badge badge-secondary">+0</span>  */}
+              <span className="indicator-item badge badge-secondary">{classes?.length}</span> 
                   <button className="btn btn-sm"><FaShoppingCart></FaShoppingCart></button>
                 </div>
               </Link>

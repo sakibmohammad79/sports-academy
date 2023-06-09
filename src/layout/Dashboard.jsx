@@ -20,18 +20,18 @@ const Dashboard = () => {
       {
         isAdmin ? 
         <div className='font-bold'>
-         <li><NavLink to='/dashboard/manageclass'><FaHome></FaHome>Manage Classes</NavLink></li>
+         <li><NavLink  to='/dashboard/manageclass'><FaHome></FaHome>Manage Classes</NavLink></li>
          <li><NavLink to='/dashboard/managestudent'><FaUtensils></FaUtensils>Manage Students</NavLink></li>
         </div>
          :
         isInstructor ?
-        <div className='font-bold'>
+        <div className='font-bold '>
           <li><NavLink to='/dashboard/addclass'><FaHome></FaHome>Add A Class</NavLink></li>
           <li><NavLink to='/dashboard/myclass'><FaCalendarAlt></FaCalendarAlt>My Class</NavLink></li>
           
         </div> 
         :
-        <div className='font-bold'>
+        <div className='font-bold text-lg uppercase'>
            <li><NavLink to='/dashboard/selectedclass'><FaHome></FaHome>My Selected Class</NavLink></li>
            <li><NavLink to='/dashboard/enrolledclass'><FaCalendarAlt></FaCalendarAlt>My Enrolled Class</NavLink></li>
            <li><NavLink to='/dashboard/history'><FaWallet></FaWallet>Payment History</NavLink></li>
@@ -40,9 +40,9 @@ const Dashboard = () => {
       }
       
       <div className="divider"></div>
-      <li className='font-bold'><NavLink to='/'><FaHome/>Home</NavLink></li>
-      <li className='font-bold'><NavLink to="/instructor">Instructor</NavLink></li>
-      <li className='font-bold'><NavLink to="/class">All Classes</NavLink></li>
+      <li className='font-bold text-lg'><NavLink to='/'><FaHome/>Home</NavLink></li>
+      <li className='font-bold text-lg'><NavLink to="/instructor">Instructor</NavLink></li>
+      <li className='font-bold text-lg'><NavLink to="/class">All Classes</NavLink></li>
     </ul>
   
   </div>

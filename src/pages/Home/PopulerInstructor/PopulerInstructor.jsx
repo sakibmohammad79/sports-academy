@@ -29,7 +29,7 @@ const PopulerInstructor = () => {
       >
         
         {
-            allDatas.map(instructor => <SwiperSlide key={instructor._id}
+            allDatas.slice(0,6).map(instructor => <SwiperSlide key={instructor._id}
             instructor={instructor}>
                 <img style={{height: '400px', width: '600px'}} src={instructor.instructorImage} />
               </SwiperSlide>)

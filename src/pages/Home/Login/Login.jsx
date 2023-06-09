@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../../shared/SocialLogin/SocialLogin";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
@@ -6,6 +6,8 @@ import { useForm } from "react-hook-form";
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || '/';
   const {logInUser} = useContext(AuthContext);
   const { register, formState: { errors }, handleSubmit} = useForm();
   const onSubmit = (data) => {
@@ -15,7 +17,7 @@ const Login = () => {
     .then((result)=> {
         const user = result.user;
         console.log(user);
-        navigate('/')
+        navigate(from, {replace: true})
     })
     .catch((error) => {
         console.log(error.message);

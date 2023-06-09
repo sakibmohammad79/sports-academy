@@ -23,9 +23,11 @@ const PopulerClass = () => {
           className="mySwiper"
         >
             {
-                allDatas.map(singleClass => <SwiperSlide key={singleClass._id}
+                allDatas.slice(0,6).map(singleClass => <SwiperSlide key={singleClass._id}
                 singleClass={singleClass}
-                ><img src={singleClass.classImage} alt="" /></SwiperSlide>)
+                ><img src={singleClass.classImage} alt="" />
+                <p className="text-pink-700 -mt-24 text-center text-3xl font-bold uppercase">{singleClass.className}</p>
+                </SwiperSlide>)
             }
           
           

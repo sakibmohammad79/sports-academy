@@ -14,7 +14,7 @@ const InstructorClass = () => {
     return (
         <>
             <SectionTitle heading={'Our client class'} subHeading={'about us'}></SectionTitle>
-            <div className='grid grid-cols-3 gap-12'>
+            <div className='grid grid-cols-3 my-12 gap-12'>
             {
                 classes.map(classs => <DisplayClass
                 key={classs._id}
