@@ -3,6 +3,14 @@ import Main from "../layout/Main";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Home/Login/Login";
 import Signin from "../pages/Home/Signin/Signin";
+import Allinstructor from "../pages/Instructor/AllInstructor/Allinstructor";
+import InstructorClass from "../pages/Class/InstructorClass/InstructorClass";
+import MyClass from "../pages/Dashboard/MyClass/MyClass";
+import Dashboard from "../layout/Dashboard";
+
+
+
+
 
 const router = createBrowserRouter([
     {
@@ -20,9 +28,27 @@ const router = createBrowserRouter([
         {
           path: '/signin',
           element: <Signin></Signin>
+        },
+        {
+          path: '/instructor',
+          element: <Allinstructor></Allinstructor>
+        },
+        {
+          path: '/class',
+          element: <InstructorClass></InstructorClass>
         }
       ]
     },
+    {
+      path: '/dashboard',
+      element: <Dashboard></Dashboard>,
+      children: [
+        {
+          path: 'myclass',
+          element: <MyClass></MyClass>
+        }
+      ]
+    }
   ]);
 
 export default router;

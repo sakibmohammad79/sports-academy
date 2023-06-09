@@ -1,19 +1,14 @@
-import React, { useEffect, useState } from 'react';
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import SectionTitle from '../../../Components/SectionTitle/SectionTitle';
+import useData from '../../../hook/useData';
 
 
 const PopulerClass = () => {
-    const [populerClass, setPopulerClass] = useState([]);
-
-    useEffect(() => {
-        fetch('http://localhost:5000/instructor')
-        .then(res => res.json())
-        .then(data => setPopulerClass(data))
-    },[])
+    const [allDatas] = useData();
     return (
         <>
         <SectionTitle heading={'populer Classes'} subHeading={'join us'}></SectionTitle>
@@ -28,7 +23,7 @@ const PopulerClass = () => {
           className="mySwiper"
         >
             {
-                populerClass.map(singleClass => <SwiperSlide key={singleClass._id}
+                allDatas.map(singleClass => <SwiperSlide key={singleClass._id}
                 singleClass={singleClass}
                 ><img src={singleClass.classImage} alt="" /></SwiperSlide>)
             }

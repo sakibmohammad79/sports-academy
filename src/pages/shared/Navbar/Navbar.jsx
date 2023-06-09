@@ -10,14 +10,16 @@ const Navbar = () => {
 
     const navItems = <>
             <li><Link to='/' className="font-bold uppercase hover:text-lime-500">Home</Link></li>
-            <li><Link to="/instructors" className="font-bold uppercase  hover:text-lime-500">Instructors</Link></li>
-            <li><Link to="/class" className="font-bold uppercase  hover:text-lime-500">Classes</Link></li>
+            <li><Link to='/instructor' className="font-bold uppercase  hover:text-lime-500">Instructors</Link></li>
+            <li><Link to='/class'  className="font-bold uppercase  hover:text-lime-500">Classes</Link></li>
             {
               user && 
-              <div className="indicator">
-              <span className="indicator-item badge badge-secondary">+0</span> 
-              <button className="btn btn-sm"><FaShoppingCart></FaShoppingCart></button>
-              </div>
+              <Link to='dashboard/myclass'>
+                <div className="indicator">
+              {/* <span className="indicator-item badge badge-secondary">+0</span>  */}
+                  <button className="btn btn-sm"><FaShoppingCart></FaShoppingCart></button>
+                </div>
+              </Link>
             }
     </>
 
@@ -28,7 +30,7 @@ const Navbar = () => {
       })
     }
     return (
-        <div style={{height: '100px'}} className="navbar max-w-6xl fixed z-10 bg-black text-white px-12">
+        <div style={{height: '100px'}} className="navbar max-w-6xl  bg-black text-white px-12">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
