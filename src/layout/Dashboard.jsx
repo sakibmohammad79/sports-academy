@@ -3,8 +3,9 @@ import { FaCalendarAlt, FaHome, FaUtensils, FaWallet } from 'react-icons/fa';
 import { NavLink, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
-    const isAdmin = false;
-    const isInstructor = false;
+   
+    const isAdmin = true
+    
     return (
         <div className="drawer lg:drawer-open">
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -19,13 +20,13 @@ const Dashboard = () => {
       
       {
         isAdmin ? 
-        <div className='font-bold'>
+        <div className='font-bold text-lg uppercase'>
          <li><NavLink  to='/dashboard/manageclass'><FaHome></FaHome>Manage Classes</NavLink></li>
-         <li><NavLink to='/dashboard/managestudent'><FaUtensils></FaUtensils>Manage Students</NavLink></li>
+         <li><NavLink to='/dashboard/manageusers'><FaUtensils></FaUtensils>Manage Users</NavLink></li>
         </div>
          :
         isInstructor ?
-        <div className='font-bold '>
+        <div className='font-bold text-lg uppercase'>
           <li><NavLink to='/dashboard/addclass'><FaHome></FaHome>Add A Class</NavLink></li>
           <li><NavLink to='/dashboard/myclass'><FaCalendarAlt></FaCalendarAlt>My Class</NavLink></li>
           
@@ -40,9 +41,9 @@ const Dashboard = () => {
       }
       
       <div className="divider"></div>
-      <li className='font-bold text-lg'><NavLink to='/'><FaHome/>Home</NavLink></li>
-      <li className='font-bold text-lg'><NavLink to="/instructor">Instructor</NavLink></li>
-      <li className='font-bold text-lg'><NavLink to="/class">All Classes</NavLink></li>
+      <li className='font-bold text-lg uppercase'><NavLink to='/'><FaHome/>Home</NavLink></li>
+      <li className='font-bold text-lg uppercase'><NavLink to="/instructor">All Instructor</NavLink></li>
+      <li className='font-bold text-lg uppercase'><NavLink to="/class">All Classes</NavLink></li>
     </ul>
   
   </div>
