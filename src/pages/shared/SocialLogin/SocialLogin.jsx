@@ -1,23 +1,35 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const SocialLogin = () => {
-    const navigate = useNavigate();
   const { logInByGoogle } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/'
 
   const handleLogin = () => {
     logInByGoogle()
-    .then(result => {
-        const user = result.user;
-        console.log(user)
-        navigate('/')
-    })
-    .catch(error => {
-        console.log(error.message);
-    })
-  }
+        .then((result) => {
+            const googleLogedUser = result.user;
+            console.log(googleLogedUser);
+            const saveUser = { name: googleLogedUser.displayName, email: googleLogedUser.email };
+      console.log(saveUser);
+      fetch("https://wolves-server.vercel.app/users", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(saveUser),
+      })
+        .then((res) => res.json())
+        .then(() => {
+            navigate(from, {replace: true});
+        });  
+        })
+    }
   return (
     <>
       <div className="divider">OR</div>

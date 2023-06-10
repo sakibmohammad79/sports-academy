@@ -3,36 +3,49 @@ import {  useForm } from "react-hook-form";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../../shared/SocialLogin/SocialLogin";
+import Swal from "sweetalert2";
 
 
 const Signin = () => {
   const navigate = useNavigate();
     const {createUser, updateProfileUser} = useContext(AuthContext);
-    const { register, formState: { errors }, handleSubmit, watch } = useForm();
+    const { register, formState: { errors }, handleSubmit, watch, reset } = useForm();
     const password = React.useRef({});
     password.current = watch('password', '');
-  const onSubmit = (data) => {
-    console.log(data);
-
-    createUser(data.email, data.password)
-    .then((result)=> {
-        const user = result.user;
-        console.log(user);
-        updateProfileUser(data.name, data.photoUrl)
-        .then(result => console.log(result))
-        navigate('/')
-    })
-    .catch((error) => {
-        console.log(error.message);
-    })
-  };
-
-
+    const onSubmit = (data) => {
+      createUser(data.email, data.password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
   
+        updateProfileUser(data.name, data.photoURL)
+        const saveUser = { name: data.name, email: data.email };
+        console.log(saveUser);
+        fetch("https://wolves-server.vercel.app/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(saveUser),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.insertedId) {
+              reset();
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "User created successfully.",
+                showConfirmButton: false,
+                timer: 1500,
+              });
+              navigate("/");
+            }
+          });
+      });
+    };
 
-    
-
-    return (
+  return (
         <div className="hero min-h-screen bg-base-200 py-12">
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -99,8 +112,8 @@ const Signin = () => {
                 <label className="label">
                   <span className="label-text">Photo URL</span>
                 </label>
-                <input type="text" {...register("photoUrl", { required: true })} placeholder="Photo" className="input input-bordered" />
-                {errors.photoUrl?.type === "required" && (
+                <input type="text" {...register("photoURL", { required: true })} placeholder="Photo" className="input input-bordered" />
+                {errors.photoURL?.type === "required" && (
                     <p className="text-red-500">passwprd is required</p>
                   )}
               </div>

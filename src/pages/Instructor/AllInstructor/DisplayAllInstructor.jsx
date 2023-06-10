@@ -3,7 +3,7 @@ import React from "react";
 const DisplayAllInstructor = ({ instructor }) => {
   const {instructorImage, instructorName} = instructor;
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card w-86 bg-base-100 shadow-xl">
       <figure>
         <img
           src={instructorImage}
