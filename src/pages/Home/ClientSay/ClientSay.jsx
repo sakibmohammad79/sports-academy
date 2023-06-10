@@ -12,7 +12,7 @@ const ClientSay = () => {
     },[])
     //console.log(reviews);
     return (
-        <>
+        <div className='mb-16'>
             <SectionTitle heading={'Our client say'} subHeading={'about us'}></SectionTitle>
             <div className='grid grid-cols-3 gap-8'>
             {
@@ -22,7 +22,7 @@ const ClientSay = () => {
                 </ClientCard>)
             }
             </div>
-        </>
+        </div>
     );
 };
 
