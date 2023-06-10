@@ -8,6 +8,7 @@ const ManageUsers = () => {
         const res = await fetch('https://wolves-server.vercel.app/users')
         return res.json();
     })
+
     const handleMakeAdmin = (user) => {
         fetch(`https://wolves-server.vercel.app/users/admin/${user._id}`,{
             method: 'PATCH'
@@ -15,12 +16,12 @@ const ManageUsers = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
-            if(data.modifiedCount>0){
+            if(data.modifiedCount){
                 refetch();
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',
-                    title: `${user.name} is an admin now!`,
+                    title: `${user.name} Is An Admin Now!`,
                     showConfirmButton: false,
                     timer: 1500
                   })
