@@ -1,41 +1,35 @@
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
+import { Pagination } from "swiper";
 import SectionTitle from '../../../Components/SectionTitle/SectionTitle';
-import { EffectCoverflow, Pagination } from "swiper";
 import useData from '../../../hook/useData';
 const PopulerInstructor = () => {
     const [allDatas] = useData();
+    console.log(allDatas);
     return (
-        <div className=''>
-            <SectionTitle heading={'our best instructor'} subHeading={'best output'}></SectionTitle>
+      <>
+      <SectionTitle heading={'populer Classes'} subHeading={'join us'}></SectionTitle>
       <Swiper
-        effect={"coverflow"}
-        grabCursor={true}
+        slidesPerView={4}
+        spaceBetween={30}
         centeredSlides={true}
-        slidesPerView={"auto"}
-        coverflowEffect={{
-          rotate: 50,
-          stretch: 0,
-          depth: 100,
-          modifier: 1,
-          slideShadows: true,
+        pagination={{
+          clickable: true,
         }}
-        pagination={true}
-        modules={[EffectCoverflow, Pagination]}
+        modules={[Pagination]}
         className="mySwiper"
       >
-        
-        {
-            allDatas.slice(0,6).map(instructor => <SwiperSlide key={instructor._id}
-            instructor={instructor}>
-                <img style={{height: '400px', width: '600px'}} src={instructor.instructorImage} />
+          {
+              allDatas.slice(0,6).map(singleClass => <SwiperSlide key={singleClass._id}
+              singleClass={singleClass}
+              ><img style={{height: '400px'}} src={singleClass.instructorImage} alt="" />
               </SwiperSlide>)
-        }
+          }
+        
+        
       </Swiper>
-    </div>
+    </>
     );
 };
 

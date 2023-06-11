@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const useData = () => {
     const [allDatas, setAllDatas] = useState([]);
-    console.log(allDatas);
+    //console.log(allDatas);
 
     useEffect(() => {
         fetch('https://wolves-server.vercel.app/instructor')

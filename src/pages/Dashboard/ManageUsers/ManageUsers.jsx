@@ -31,8 +31,24 @@ const ManageUsers = () => {
         })
     }
 
-    const handleMakeInstructor = (id) => {
-
+    const handleMakeInstructor = (user) => {
+      fetch(`https://wolves-server.vercel.app/users/instructor/${user._id}`,{
+        method: 'PATCH'
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+        if(data.modifiedCount){
+            refetch();
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: `${user.name} Is An Admin Now!`,
+                showConfirmButton: false,
+                timer: 1500
+              })
+        }
+    })
     }
 
     const handleDelete = (user) => {
@@ -89,7 +105,7 @@ const ManageUsers = () => {
                 <button onClick={()=>handleMakeAdmin(user)}  className="btn btn-ghost btn-sm text-white bg-orange-500"><FaUserShield/></button>}
             </td>
             <td>
-                { user.role === 'instructor' ? 'instructor' :
+                { user.role === 'instructor' ? 'Instructor' :
                 <button onClick={()=>handleMakeInstructor(user)}  className="btn btn-ghost btn-sm text-white bg-orange-500"><FaUserShield/></button>}
             </td>
                 <td>  <button onClick={()=> handleDelete(user)} className="btn btn-ghost btn-sm text-white bg-red-500"><FaTrashAlt/></button>

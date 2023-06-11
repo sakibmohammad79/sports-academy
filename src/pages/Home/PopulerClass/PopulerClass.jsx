@@ -1,38 +1,23 @@
-
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination } from "swiper";
-import SectionTitle from '../../../Components/SectionTitle/SectionTitle';
+import React from 'react';
 import useData from '../../../hook/useData';
-
+import PopulerClassCard from './PopulerClassCard';
+import SectionTitle from '../../../Components/SectionTitle/SectionTitle';
 
 const PopulerClass = () => {
     const [allDatas] = useData();
+    console.log(allDatas)
     return (
-        <>
-        <SectionTitle heading={'populer Classes'} subHeading={'join us'}></SectionTitle>
-        <Swiper
-          slidesPerView={4}
-          spaceBetween={30}
-          centeredSlides={true}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
-          className="mySwiper"
-        >
+        <div>
+            <SectionTitle heading={'Our client say'} subHeading={'about us'}></SectionTitle>
+            <div className='grid grid-cols-3 gap-4'>
             {
-                allDatas.slice(0,6).map(singleClass => <SwiperSlide key={singleClass._id}
-                singleClass={singleClass}
-                ><img src={singleClass.classImage} alt="" />
-                <p className="text-pink-700 -mt-24 text-center text-3xl font-bold uppercase">{singleClass.className}</p>
-                </SwiperSlide>)
+                allDatas.slice(0,6).map(classes => <PopulerClassCard
+                key={classes._id}
+                classes={classes}>
+                </PopulerClassCard>)
             }
-          
-          
-        </Swiper>
-      </>
+            </div>
+        </div>
     );
 };
 
