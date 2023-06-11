@@ -2,6 +2,7 @@ import React from 'react';
 import useClass from '../../../hook/useClass';
 import { FaTrashAlt } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 
 const MySelectedClass = () => {
@@ -47,6 +48,7 @@ const MySelectedClass = () => {
               <th>#</th>
               <th>Class Image</th>
               <th>Class Name</th>
+              <th>Instructor Name</th>
               <th>Seats</th>
               <th>Price</th>
               <th>Delete</th>
@@ -74,6 +76,9 @@ const MySelectedClass = () => {
                 <td>
                   {item.className}
                 </td>
+                <td>
+                  {item.instructorName}
+                </td>
                 <td >
                   {item.seats}
                 </td>
@@ -84,7 +89,7 @@ const MySelectedClass = () => {
                 <button onClick={()=>handleDelete(item)} className="btn btn-ghost btn-sm text-white bg-red-500"><FaTrashAlt/></button>
                 </td>
                 <td>
-                <button className="btn btn-ghost btn-sm text-white bg-pink-600">Pay</button>
+                <Link to='/dashboard/payment'><button className="btn btn-ghost btn-sm text-white bg-pink-600">Pay</button></Link>
                 </td>
                 
               </tr> )

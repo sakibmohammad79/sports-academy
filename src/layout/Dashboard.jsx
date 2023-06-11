@@ -37,9 +37,9 @@ const Dashboard = () => {
         </div> 
         :
         <div className='font-bold text-lg uppercase'>
-           <li><NavLink to='/dashboard/selectedclass'><FaHome></FaHome>My Selected Class</NavLink></li>
            <li><NavLink to='/dashboard/enrolledclass'><FaCalendarAlt></FaCalendarAlt>My Enrolled Class</NavLink></li>
            <li><NavLink to='/dashboard/history'><FaWallet></FaWallet>Payment History</NavLink></li>
+           <li><NavLink to='/dashboard/selectedclass'><FaHome></FaHome>My Selected Class</NavLink></li>
         </div>
 
       }

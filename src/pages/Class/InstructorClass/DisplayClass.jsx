@@ -60,7 +60,7 @@ const DisplayClass = ({ classs }) => {
         />
       </figure>
       <div className="card-body">
-        <h2 className="card-title"><span>Class:</span> {className}</h2>
+        <h2 className="card-title"><span>Class :</span> {className}</h2>
         <h2 className="card-title"><span>Instructor:</span> {instructorName}</h2>
         <h2 className="card-title"><span>Seats:</span> {seats}</h2>
         <h2 className="card-title"><span>Price:</span> ${price}</h2>
