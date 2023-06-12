@@ -25,8 +25,8 @@ const Dashboard = () => {
       {
         isAdmin ? 
         <div className='font-bold text-lg uppercase'>
-         <li><NavLink  to='/dashboard/manageclass'><FaHome></FaHome>Manage Classes</NavLink></li>
-         <li><NavLink to='/dashboard/manageusers'><FaUtensils></FaUtensils>Manage Users</NavLink></li>
+         <li><NavLink  to='/dashboard/manageclass'>Manage Classes</NavLink></li>
+         <li><NavLink to='/dashboard/manageusers'>Manage Users</NavLink></li>
         </div>
          :
         isInstructor ?
@@ -38,8 +38,8 @@ const Dashboard = () => {
         :
         <div className='font-bold text-lg uppercase'>
            <li><NavLink to='/dashboard/enrolledclass'><FaCalendarAlt></FaCalendarAlt>My Enrolled Class</NavLink></li>
-           <li><NavLink to='/dashboard/history'><FaWallet></FaWallet>Payment History</NavLink></li>
-           <li><NavLink to='/dashboard/selectedclass'><FaHome></FaHome>My Selected Class</NavLink></li>
+           <li><NavLink to='/dashboard/paymenthistory'><FaWallet></FaWallet>Payment History</NavLink></li>
+           <li><NavLink to='/dashboard/selectedclass'>My Selected Class</NavLink></li>
         </div>
 
       }

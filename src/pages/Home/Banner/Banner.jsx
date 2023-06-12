@@ -4,7 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 const Banner = () => {
     return (
         <Carousel className='text-center'>
-        <div>
+        <div className=''>
             <img className='' src="https://i.postimg.cc/mhxKyHkM/badminton-player-serving-shuttlecock-2021-08-27-18-28-17-utc-copy1-800x533.jpg" />
         </div>
         <div>
