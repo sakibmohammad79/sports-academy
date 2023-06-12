@@ -3,24 +3,20 @@ import logo from "../../../assets/logo4-800x307.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
 import { FaShoppingCart } from "react-icons/fa";
-import useClass from "../../../hook/useClass";
+
 
 
 const Navbar = () => {
   const {user, logOutUser} = useContext(AuthContext);
-  const [classes] = useClass();
+
     const navItems = <>
-            <li><Link to='/' className="font-bold uppercase hover:text-lime-500">Home</Link></li>
-            <li><Link to='/instructor' className="font-bold uppercase  hover:text-lime-500">Instructors</Link></li>
-            <li><Link to='/class'  className="font-bold uppercase  hover:text-lime-500">Classes</Link></li>
+            <li><Link to='/' className="font-bold uppercase text-white hover:text-lime-500">Home</Link></li>
+            <li><Link to='/instructor' className="font-bold uppercase text-white hover:text-lime-500">Instructors</Link></li>
+            <li><Link to='/class'  className="font-bold uppercase  text-white  hover:text-lime-500">Classes</Link></li>
             {
               user && 
-              <Link to='/dashboard/selectedclass'>
-                <div className="indicator">
-              <span className="indicator-item badge badge-secondary">{classes?.length}</span> 
-                  <button className="btn btn-sm"><FaShoppingCart></FaShoppingCart></button>
-                </div>
-              </Link>
+              
+              <li><Link to='/dashboard/selectedclass'  className="font-bold uppercase  text-white  hover:text-lime-500 text-md">dashboard</Link></li>
             }
     </>
 
@@ -32,12 +28,12 @@ const Navbar = () => {
     }
     return (
         <div style={{height: '100px'}} className="navbar max-w-6xl  bg-black text-white px-12">
-  <div className="navbar-start">
+  <div className="navbar-start z-10">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
-      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+      <ul tabIndex={0} className="menu bg-lime-500 menu-sm dropdown-content mt-3 p-2 shadow rounded-box w-52">
        {navItems}
       </ul>
     </div>

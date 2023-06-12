@@ -13,7 +13,7 @@ const Allinstructor = () => {
     },[])
     //console.log(instructors);
     return (
-        <div>
+        <div className='p-8'>
             <SectionTitle heading={'our all instructor'} subHeading={'contuct with'}></SectionTitle>
             <div className='grid grid-cols-3 gap-12 my-16'>
             {

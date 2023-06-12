@@ -17,7 +17,7 @@ const Footer = () => {
           <p className="font-bold">Sat – Sun: 9 AM – 1 PM</p>
         </div>
         <div className="text-center">
-          <p className="font-bold text-lg">Private Dinning</p>
+          <p className="font-bold text-lg">Contact Information</p>
           <p className="font-bold">Main Email: Babette@7oroof.com</p>
           <p className="font-bold">Phone: 02 0106670721</p>
         </div>

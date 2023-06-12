@@ -8,8 +8,9 @@ const PopulerClass = () => {
     console.log(allDatas)
     return (
         <div>
-            <SectionTitle heading={'Our client say'} subHeading={'about us'}></SectionTitle>
-            <div className='grid grid-cols-3 gap-4'>
+            
+            <SectionTitle heading={'Become A Professional Badminton Player'} subHeading='This section showcasing the our populer activity'></SectionTitle>
+            <div className='grid px-8 grid-cols-2 md:grid-cols-3 gap-4'>
             {
                 allDatas.slice(0,6).map(classes => <PopulerClassCard
                 key={classes._id}

@@ -12,7 +12,7 @@ const InstructorClass = () => {
     },[])
     console.log(classes);
     return (
-        <>
+        <div className='p-8'>
             <SectionTitle heading={'Our client class'} subHeading={'about us'}></SectionTitle>
             <div className='grid grid-cols-3 my-12 gap-12'>
             {
@@ -22,7 +22,7 @@ const InstructorClass = () => {
                 </DisplayClass>)
             }
             </div>
-        </>
+        </div>
     );
 };
 

@@ -7,7 +7,6 @@ import Allinstructor from "../pages/Instructor/AllInstructor/Allinstructor";
 import InstructorClass from "../pages/Class/InstructorClass/InstructorClass";
 import Dashboard from "../layout/Dashboard";
 import MySelectedClass from "../pages/Dashboard/MySelectedClass/MySelectedClass";
-
 import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
 import Error from "../pages/Error/Error";
 import PrivateRoute from "./PrivateRoute";

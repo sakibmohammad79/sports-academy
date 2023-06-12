@@ -9,7 +9,7 @@ const PopulerInstructor = () => {
     console.log(allDatas);
     return (
       <>
-      <SectionTitle heading={'populer Classes'} subHeading={'join us'}></SectionTitle>
+      <SectionTitle heading={'Our goal is to create a supportive environment'} subHeading={"let's go connect with our best instructor"}></SectionTitle>
       <Swiper
         slidesPerView={4}
         spaceBetween={30}

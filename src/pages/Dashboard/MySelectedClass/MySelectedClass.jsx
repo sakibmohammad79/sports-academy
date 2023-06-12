@@ -8,8 +8,6 @@ import { Link } from 'react-router-dom';
 const MySelectedClass = () => {
     const [classes, refetch] = useClass();
     console.log(classes)
-    const total = classes.reduce((sum, item) => item.price + sum, 0);
-    console.log(total);
     const handleDelete = (item) => {
         Swal.fire({
             title: 'Are you sure?',
@@ -39,12 +37,12 @@ const MySelectedClass = () => {
           })
     }
     return (
-        <div className='w-full mx-8'>
-            <h3 className='text-3xl font-bold text-center my-6 text-pink-600'>MY SELECTED CLASS</h3>
+        <div className='w-full mx-8 text-white'>
+            <h3 className='text-3xl font-bold text-center my-6 text-lime-500'>MY SELECTED CLASS</h3>
             <div className="overflow-x-auto w-full">
-        <table className="table w-full">
+        <table className="table w-full text-white font-bold text-md">
           <thead>
-            <tr>
+            <tr className='text-white text-md'>
               <th>#</th>
               <th>Class Image</th>
               <th>Class Name</th>
@@ -89,7 +87,7 @@ const MySelectedClass = () => {
                 <button onClick={()=>handleDelete(item)} className="btn btn-ghost btn-sm text-white bg-red-500"><FaTrashAlt/></button>
                 </td>
                 <td>
-                <Link to='/dashboard/payment'><button className="btn btn-ghost btn-sm text-white bg-pink-600">Pay</button></Link>
+                <Link to='/dashboard/payment'><button className="btn btn-ghost btn-sm text-white bg-lime-500">Pay</button></Link>
                 </td>
                 
               </tr> )

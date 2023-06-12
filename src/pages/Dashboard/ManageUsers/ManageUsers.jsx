@@ -83,9 +83,9 @@ const ManageUsers = () => {
         <div className='w-full'>
             <h3 className='text-4xl m-8 text-lime-500 font-bold'>Total Users: {users.length}</h3>
             <div className="overflow-x-auto">
-  <table className="table table-zebra w-full">
+  <table className="table font-bold w-full text-white">
     <thead>
-      <tr>
+      <tr className='text-white font-bold'>
         <th>#</th>
         <th>Name</th>
         <th>Email</th>
@@ -102,11 +102,11 @@ const ManageUsers = () => {
             <td>{user.email}</td>
             <td>
                 { user.role === 'admin' ? 'Admin' :
-                <button onClick={()=>handleMakeAdmin(user)}  className="btn btn-ghost btn-sm text-white bg-orange-500"><FaUserShield/></button>}
+                <button onClick={()=>handleMakeAdmin(user)}  className="btn btn-ghost btn-sm text-white bg-lime-500"><FaUserShield/></button>}
             </td>
             <td>
                 { user.role === 'instructor' ? 'Instructor' :
-                <button onClick={()=>handleMakeInstructor(user)}  className="btn btn-ghost btn-sm text-white bg-orange-500"><FaUserShield/></button>}
+                <button onClick={()=>handleMakeInstructor(user)}  className="btn btn-ghost btn-sm text-white bg-lime-500"><FaUserShield/></button>}
             </td>
                 <td>  <button onClick={()=> handleDelete(user)} className="btn btn-ghost btn-sm text-white bg-red-500"><FaTrashAlt/></button>
             </td>

@@ -6,7 +6,7 @@ const ClientCard = ({review}) => {
   const { image, clientName, rating, description, reviewTime, guestOrStudent } =
     review;
   return (
-    <div className="card w-86  bg-lime-100 shadow-xl">
+    <div className="card w-86  bg-lime-200 shadow-xl">
       <div className="card-body">
         <img className="rounded-full  border-2 border-yellow-500 " style={{width: '50px', height: '50px'}} src={image} alt="" />
         <Rating

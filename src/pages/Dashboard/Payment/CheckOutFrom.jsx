@@ -117,7 +117,7 @@ const CheckOutFrom = ({classes}) => {
             },
           }}
         />
-        <button className='btn btn-sm btn-primary mt-8' type="submit" disabled={!stripe || !clientSecret || processing}>
+        <button className='btn btn-sm bg-lime-500 mt-8' type="submit" disabled={!stripe || !clientSecret || processing}>
           Pay
         </button>
       </form>
