@@ -7,8 +7,9 @@ import { AuthContext } from '../../../providers/AuthProvider';
 
 
 
-const CheckOutFrom = ({classes}) => {
-    const price = 20;
+const CheckOutFrom = ({classes, price}) => {
+
+    console.log(price);
     const [cardError, setCardError] = useState();
     const stripe = useStripe();
     const elements = useElements();
@@ -84,15 +85,21 @@ const CheckOutFrom = ({classes}) => {
               quantity: classes.length,
               date: new Date(),
               status: 'service pending',
-              orderItemId: classes.map(item => item.orderItemId),
+              orderItemId: classes.map(item => item.classId),
               classesItems: classes.map(item => item._id),
-              itemNames: classes.map(item => item.name)
+              itemNames: classes.map(item => item.className)
             }
             axiosSecure.post('/payments', payment)
             .then(res => {
               console.log(res.data)
               if(res.data.result.insertedId){
-                //confirm display
+                Swal.fire({
+                  position: 'top-end',
+                  icon: 'success',
+                  title: 'your payment history inserted successfully',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
               }
             })
           }

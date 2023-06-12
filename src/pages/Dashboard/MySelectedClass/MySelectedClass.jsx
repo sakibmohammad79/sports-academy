@@ -87,7 +87,7 @@ const MySelectedClass = () => {
                 <button onClick={()=>handleDelete(item)} className="btn btn-ghost btn-sm text-white bg-red-500"><FaTrashAlt/></button>
                 </td>
                 <td>
-                <Link to='/dashboard/payment'><button className="btn btn-ghost btn-sm text-white bg-lime-500">Pay</button></Link>
+                <Link to='/dashboard/payment' state={item.price}><button className="btn btn-ghost btn-sm text-white bg-lime-500">Pay</button></Link>
                 </td>
                 
               </tr> )
