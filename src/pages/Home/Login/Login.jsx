@@ -28,7 +28,7 @@ const Login = () => {
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <form onSubmit={handleSubmit(onSubmit)}>
       <div className="card-body">
-      <h1 className="text-4xl text-center font-bold">Login now!</h1>
+      <h1 className="text-4xl text-center text-lime-500 font-bold">Login now!</h1>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
@@ -44,10 +44,10 @@ const Login = () => {
           {errors.password?.type === 'required' && <p className="text-red-500" role="alert">password is required</p>}
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Login</button>
+          <button className="btn bg-lime-500">Login</button>
         </div>
         <SocialLogin></SocialLogin>
-        <Link className="text-center" to='/signin'><h2>New Here? Please<span className="font-bold text-primary"> Sign Up</span></h2></Link>
+        <Link className="text-center" to='/signin'><h2>New Here? Please<span className="font-bold text-lime-500"> Sign Up</span></h2></Link>
       </div>
       </form>
       

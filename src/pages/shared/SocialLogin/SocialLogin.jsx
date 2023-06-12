@@ -33,7 +33,7 @@ const SocialLogin = () => {
   return (
     <>
       <div className="divider">OR</div>
-      <button onClick={handleLogin} className="btn btn-outline btn-primary">
+      <button onClick={handleLogin} className="btn btn-outline bg-lime-500 border-none">
         <FaGoogle /> SignUp By Google
       </button>
     </>

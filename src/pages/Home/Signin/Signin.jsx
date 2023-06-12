@@ -50,7 +50,7 @@ const Signin = () => {
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form onSubmit={handleSubmit(onSubmit)}>
             <div className="card-body">
-                <h2 className="text-3xl font-bold uppercase text-center">Please Sign Up!</h2>
+                <h2 className="text-3xl font-bold uppercase text-lime-500 text-center">Please Sign Up!</h2>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Name</span>
@@ -118,10 +118,10 @@ const Signin = () => {
                   )}
               </div>
               <div className="form-control mt-6">
-                <input className="btn btn-primary" type="submit" value="Signup" />
+                <input className="btn bg-lime-500" type="submit" value="Signup" />
               </div>
               <SocialLogin></SocialLogin>
-              <Link to='/login' className="text-center pt-2">Already Have An Account? Please<span className="font-bold text-primary"> Login</span></Link>
+              <Link to='/login' className="text-center pt-2">Already Have An Account? Please<span className="font-bold text-lime-500"> Login</span></Link>
             </div>
             </form>
           </div>
