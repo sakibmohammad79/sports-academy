@@ -11,7 +11,6 @@ const Allinstructor = () => {
         .then(res => res.json())
         .then(data => setInstructor(data))
     },[])
-    //console.log(instructors);
     return (
         <div className='p-8'>
             <SectionTitle heading={'our all instructor'} subHeading={'contuct with'}></SectionTitle>

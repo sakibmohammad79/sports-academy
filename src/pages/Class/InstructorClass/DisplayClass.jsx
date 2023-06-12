@@ -51,7 +51,7 @@ const DisplayClass = ({ classs }) => {
   }
 
   return (
-    <div className={`card w-86 ${seats === 0 ? "bg-red-100" : "bg-base-100"} shadow-xl`} >
+    <div className={`card w-86 ${seats === 0 ? "bg-red-300" : "bg-lime-100"} shadow-xl`} >
       <figure>
         <img
         style={{width: '100%', height: '300px'}}
@@ -66,7 +66,7 @@ const DisplayClass = ({ classs }) => {
         <h2 className="card-title"><span>Price:</span> ${price}</h2>
         
         <div className="card-actions justify-end">
-          <button onClick={handleAddToClass} disabled={seats === 0} className="btn btn-primary">Select Class</button>
+          <button onClick={handleAddToClass} disabled={seats === 0} className="btn font-bold text-white bg-lime-500">Select Class</button>
         </div>
       </div>
     </div>

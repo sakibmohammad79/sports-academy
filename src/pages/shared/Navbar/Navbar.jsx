@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../../../assets/logo4-800x307.png";
 import { useContext } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
-import { FaShoppingCart } from "react-icons/fa";
+
 
 
 
@@ -52,7 +52,7 @@ const Navbar = () => {
       <img  className="rounded-full" src={user?.photoURL} style={{height: '50px', width: '50px'}} alt="" />
       <Link onClick={handleSignOut} className="ml-4 btn text-white font-bold border-none bg-[#90A31c] hover:bg-[#C1D934]">Sign Out</Link>
       </> :
-      <Link to='/login' className="ml-4 text-white font-bold btn bg-[#90A31c] hover:bg-[#C1D934]">LogIn</Link>
+      <Link to='/login' className="ml-4 text-white font-bold btn border-none bg-[#90A31c] hover:bg-[#C1D934]">LogIn</Link>
     }
   </div>
 </div>
