@@ -6,7 +6,7 @@ import DisplayClass from './DisplayClass';
 const InstructorClass = () => {
     const [classes, setClasses] = useState([]);
     useEffect(() => {
-        fetch('https://wolves-server.vercel.app/instructor')
+        fetch('https://wolves-server.vercel.app/instructorclass')
         .then(res => res.json())
         .then(data => setClasses(data));
     },[])
