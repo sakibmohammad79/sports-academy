@@ -87,11 +87,7 @@ const CheckOutFrom = () => {
               email: user?.email,
               transactionId: paymentIntent.id,
               price,
-              //quantity: classes.length,
               date: new Date(),
-              //status: 'service pending',
-              //orderItemId: classes.map(item => item.classId),
-              //classesItems: classes.map(item => item._id),
               itemNames: item.className,
             }
             axiosSecure.post(`/payments/${item._id}`, payment)
@@ -108,6 +104,21 @@ const CheckOutFrom = () => {
               }
             })
           }
+    }
+    const handleEnrollClass = (item) => {
+      axiosSecure.post('/enrollclass', item)
+            .then(res => {
+              console.log('payment post', res.data)
+              if(res.data.result.insertedId){
+                Swal.fire({
+                  position: 'top-end',
+                  icon: 'success',
+                  title: 'your enroll classes history inserted successfully',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+              }
+            })
     }
     return (
        <>
@@ -128,7 +139,7 @@ const CheckOutFrom = () => {
             },
           }}
         />
-        <button className='btn btn-sm bg-lime-500 mt-8' type="submit" disabled={!stripe || !clientSecret || processing}>
+        <button onClick={()=>handleEnrollClass(item)} className='btn btn-sm bg-lime-500 mt-8' type="submit" disabled={!stripe || !clientSecret || processing}>
           Pay
         </button>
       </form>
