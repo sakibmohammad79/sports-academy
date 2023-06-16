@@ -27,7 +27,7 @@ const Navbar = () => {
       })
     }
     return (
-        <div style={{height: '100px'}} className="navbar max-w-6xl  bg-black text-white px-12">
+        <div style={{height: '100px'}} className="navbar max-w-6xl  bg-black text-white md:px-12">
   <div className="navbar-start z-10">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -50,9 +50,9 @@ const Navbar = () => {
       user ? 
       <>
       <img  className="rounded-full" src={user?.photoURL} style={{height: '50px', width: '50px'}} alt="" />
-      <Link onClick={handleSignOut} className="ml-4 btn text-white font-bold border-none bg-[#90A31c] hover:bg-[#C1D934]">Sign Out</Link>
+      <Link onClick={handleSignOut} className="ml-2 md:ml-4 btn text-white font-bold border-none bg-[#90A31c] hover:bg-[#C1D934]">Sign Out</Link>
       </> :
-      <Link to='/login' className="ml-4 text-white font-bold btn border-none bg-[#90A31c] hover:bg-[#C1D934]">LogIn</Link>
+      <Link to='/login' className="ml-2 md:ml-4 text-white font-bold btn border-none bg-[#90A31c] hover:bg-[#C1D934]">LogIn</Link>
     }
   </div>
 </div>

@@ -7,7 +7,7 @@ import { AuthContext } from '../../../providers/AuthProvider';
 
 
 const imgHostingToken = import.meta.env.VITE_IMAGE_UPLOAD_TOKEN;
-console.log(imgHostingToken);
+//console.log(imgHostingToken);
 const AddClass = () => {
   const {user} = useContext(AuthContext);
     const [axiosSecure] = useAxiosSecure();
@@ -50,7 +50,7 @@ const AddClass = () => {
   };
     return (
         <div className='w-full px-8 '>
-            <SectionTitle heading={'add an class'} subHeading={'amazing classes'}></SectionTitle>
+            <SectionTitle heading={'add a class'}></SectionTitle>
             
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div className='flex gap-4'>
@@ -126,7 +126,7 @@ const AddClass = () => {
           />
         </div>
         </div>
-        <input className="btn w-full bg-lime-500 border-none" type="submit" value="Add item" /> 
+        <input className="btn w-full bg-lime-500 border-none font-bold text-white" type="submit" value="Add class" /> 
     </form>
     </div>
 

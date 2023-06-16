@@ -4,12 +4,17 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import useAxiosSecure from '../../../hook/useAxiosSecure';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { useLocation } from 'react-router-dom';
 
 
 
-const CheckOutFrom = ({classes, price}) => {
 
-    console.log(price);
+const CheckOutFrom = () => {
+  const location = useLocation();
+  const  item  = location.state;
+
+  const {price, _id} = item;
+
     const [cardError, setCardError] = useState();
     const stripe = useStripe();
     const elements = useElements();
@@ -82,16 +87,16 @@ const CheckOutFrom = ({classes, price}) => {
               email: user?.email,
               transactionId: paymentIntent.id,
               price,
-              quantity: classes.length,
+              //quantity: classes.length,
               date: new Date(),
-              status: 'service pending',
-              orderItemId: classes.map(item => item.classId),
-              classesItems: classes.map(item => item._id),
-              itemNames: classes.map(item => item.className)
+              //status: 'service pending',
+              //orderItemId: classes.map(item => item.classId),
+              //classesItems: classes.map(item => item._id),
+              itemNames: item.className,
             }
-            axiosSecure.post('/payments', payment)
+            axiosSecure.post(`/payments/${item._id}`, payment)
             .then(res => {
-              console.log(res.data)
+              console.log('payment post', res.data)
               if(res.data.result.insertedId){
                 Swal.fire({
                   position: 'top-end',
@@ -104,7 +109,6 @@ const CheckOutFrom = ({classes, price}) => {
             })
           }
     }
-
     return (
        <>
          <form className='w-1/2 mx-auto mt-12 ' onSubmit={handleSubmit}>
@@ -131,7 +135,7 @@ const CheckOutFrom = ({classes, price}) => {
       {
         cardError && <p className='text-red-500 font-bold text-center'>{cardError}</p>
       }
-      {transactionId && <p className='text-green-400 font-bold'>Trancsaction complete with transaction Id: {transactionId}</p>}
+      {transactionId && <p className='text-lime-500 mt-4 font-bold text-center'>Trancsaction complete with transaction Id: <span className='text-orange-500'>{transactionId}</span></p>}
        </>
     );
 };

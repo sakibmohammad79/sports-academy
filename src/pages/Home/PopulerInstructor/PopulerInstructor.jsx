@@ -6,7 +6,7 @@ import SectionTitle from '../../../Components/SectionTitle/SectionTitle';
 import useData from '../../../hook/useData';
 const PopulerInstructor = () => {
     const [allDatas] = useData();
-    console.log(allDatas);
+    //console.log(allDatas);
     return (
       <>
       <SectionTitle heading={'Our goal is to create a supportive environment'} subHeading={"let's go connect with our best instructor"}></SectionTitle>

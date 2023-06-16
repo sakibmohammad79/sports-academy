@@ -1,5 +1,5 @@
 import React from 'react';
-import { Fade, Slide } from "react-awesome-reveal";
+import { Slide } from "react-awesome-reveal";
 
 const UpcomingMatch = () => {
     return (

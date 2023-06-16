@@ -14,7 +14,7 @@ const Allinstructor = () => {
     return (
         <div className='p-8'>
             <SectionTitle heading={'our all instructor'} subHeading={'contuct with'}></SectionTitle>
-            <div className='grid grid-cols-3 gap-12 my-16'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-12 my-16'>
             {
                 instructors.map(instructor => <DisplayAllInstructor key={instructor._id}
                 instructor={instructor}

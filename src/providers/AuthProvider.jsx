@@ -47,7 +47,7 @@ const AuthProvider = ({children}) => {
             if(currentUser){
                 axios.post('https://wolves-server.vercel.app/jwt', {email: currentUser.email})
                 .then(data => {
-                    console.log(data.data.token);
+                    //console.log(data.data.token);
                     localStorage.setItem('access-token', data.data.token);
                     setLoading(false)
                 })

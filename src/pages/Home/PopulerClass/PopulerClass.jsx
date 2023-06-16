@@ -5,7 +5,7 @@ import SectionTitle from '../../../Components/SectionTitle/SectionTitle';
 
 const PopulerClass = () => {
     const [allDatas] = useData();
-    console.log(allDatas)
+    //console.log(allDatas)
     return (
         <div>
             

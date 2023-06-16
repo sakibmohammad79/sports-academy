@@ -1,9 +1,11 @@
 import React from 'react';
+import { Bounce, Flip, Zoom } from "react-awesome-reveal";
 
 const PopulerClassCard = ({classes}) => {
     const {classImage} = classes;
     return (
-        <div className=" shadow-xl">
+        <Bounce>
+          <div className=" shadow-xl">
       <figure>
         <img
         style={{height: '301px', width: '500px'}}
@@ -12,6 +14,7 @@ const PopulerClassCard = ({classes}) => {
         />
       </figure>
     </div>
+        </Bounce>
     );
 };
 
