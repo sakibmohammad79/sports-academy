@@ -13,7 +13,7 @@ const InstructorClass = () => {
     console.log(classes);
     return (
         <div className='p-8'>
-            <SectionTitle heading={'Our All Instructor classes'} subHeading={'all classes are amazing you learn lot of things'}></SectionTitle>
+            <SectionTitle heading={'Our All Instructor classes'} subHeading={'all classes are amazing you learn lot of things.'}></SectionTitle>
             <div className='grid grid-cols-3 my-12 gap-12'>
             {
                 classes.map(classs => <DisplayClass
